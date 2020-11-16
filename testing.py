@@ -14,7 +14,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 model = models.resnet18(pretrained=False)
 num_ftrs = model.fc.in_features
 model.fc = nn.Linear(num_ftrs, n_classes)
-model.load_state_dict(torch.load('./model/ResNet18v4'))
+model.load_state_dict(torch.load('./model/ResNet18'))
 model.to(device)
 model.eval()
 
@@ -29,7 +29,7 @@ def load_obj(dic_name):
   with open(dic_name + '.pkl', 'rb') as f:
     return pickle.load(f)
 
-class_dict = load_obj('dict_4')
+class_dict = load_obj('dict')
 inv_class_dict = {v: k for k, v in class_dict.items()}
 
 pred_list = []
