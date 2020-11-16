@@ -10,17 +10,18 @@ The following specs were used to create the original solution.
 ## Installation
 All requirements should be detailed in requirements.txt. Using Anaconda is strongly recommended. {envs_name} is the new environment name which you should assign.
 ```
-conda create -n {envs_name} python=3.6
+conda create -n {envs_name} python=3.7
 source activate {envs_name}
 pip install -r requirements.txt
 ```
 ## Dataset Preparation
-The training_label.csv is already in the data directory. You can download the data on the Kaggle website: https://www.kaggle.com/c/cs-t0828-2020-hw1/data
-
+You can download the data on the following google drive: 
+Training data: https://drive.google.com/file/d/1xd7gpJjJ9rJy8XqW1ArfAtkzXr1rvroL/view?usp=sharing
+Testing data: https://drive.google.com/file/d/1xd7gpJjJ9rJy8XqW1ArfAtkzXr1rvroL/view?usp=sharing
 ### Prepare Images
 After downloading, the data directory is structured as:
 ```
-data
+TrainingData
   +- epidural
     +- ID_0a5b19112.jpg
     +- ID_0a21c7cde.jpg
@@ -45,33 +46,27 @@ data
     +- ID_0a4a21efb.jpg
     +- ID_0a16f9f35.jpg
     ...
++- TestingData
+  +- Test_001.dcm
+  +- Test_002.dcm
+  ...
 ```
 
 ### Data Preprocessing
-It is going to split the training data randomly to generate a new training data and valid data in the data directory. The ratio of the training data and valid data is 8 : 2
+First, it will transfer the dicom file to jpg file. And, it is going to do the data augmentation. Finally, it is going to split the data randomly to generate a training data and valid data in the input directory. The ratio of the training data and valid data is 8 : 2
 
 ```
 $ python3 preprocessing.py
 ```
 
 ## Training
-I provide 2 model for the task. One is ResNet50, and the other is DenseNet201.
-You can run the ResNet50 model by following
+You can do training by following
 ```
-$ python3 ResNet50.py
-```
-You can run the DenseNet201 model by following
-```
-$ python3 DenseNet201.py
+$ python3 training.py
 ```
 
-## Make Submission
-There are two python file to make different submission
-You can run make_submission_ResNet50 to make a submission for ResNet50 model
+## Make Submission / Testing
+You can do testing by following 
 ```
-$ python3 make_submission_ResNet50.py
-```
-You can run make_submission_ResNet50 to make a submission for DenseNet201 model
-```
-$ python3 make_submission_DenseNet201.py
+$ python3 testing.py
 ```
