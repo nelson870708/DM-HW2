@@ -6,7 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time
 
-def preprocessing(input_dir, output_dir, target):
+def preprocessing(input_dir, output_dir, target, start_time, file_path_):
     for dir_path, dir_name, file_name in os.walk(input_dir):
         for f in file_name:
             file_path = os.path.join(dir_path, f)
@@ -143,7 +143,7 @@ if not os.path.isdir('./input/val/subarachnoid'):
 if not os.path.isdir('./input/val/subdural'):
     os.mkdir('./input/val/subdural')
  
-preprocessing(data_dir, jpg_dir, 'training')
+preprocessing(data_dir, jpg_dir, 'training', start, file_path_list)
 
 start = time.time()
 file_path_list = []
@@ -153,6 +153,6 @@ jpg_dir = './test_input'
 if not os.path.isdir('./test_input'):
     os.mkdir('./test_input')
 
-preprocessing(data_dir, jpg_dir, 'testing')
+preprocessing(data_dir, jpg_dir, 'testing', start, file_path_list)
 
 
