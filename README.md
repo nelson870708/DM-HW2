@@ -1,5 +1,5 @@
 # DM-Case2
-Homework1 in NCTU Digital Medicine
+Project in Digital Medicine in NCTU
 
 ## Hardware
 The following specs were used to create the original solution.
