@@ -1,5 +1,5 @@
-# DM-Case2
-Project in Digital Medicine in NCTU
+# DM-HW2
+The homework aims to classify different types of intracerebral hemorrhage.
 
 ## Hardware
 The following specs were used to create the original solution.
