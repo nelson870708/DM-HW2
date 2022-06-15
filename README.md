@@ -1,5 +1,5 @@
 # DM-HW2
-The homework aims to classify different types of intracerebral hemorrhage with different CT images.
+The homework aims to classify different types of intracerebral hemorrhage with the CT images.
 
 ## Hardware
 The following specs were used to create the original solution.
